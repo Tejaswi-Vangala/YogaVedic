@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>yoga-guru</title>
+    <style>
+      form{
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;                width:30%;
+        height:60%;
+        background-image: url("/static/images/th.jfif");
+        background-size: cover;
+	background-position: center;
+        margin-top: 5%;
+      }  
+      table,td{
+        padding: 15px;
+      }
+      body{
+        place-items: center;
+        font-size: 20pt;
+        font-weight: bold;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-style: italic;
+      }
+      #submit1{
+        background: white;
+        height: 20%;
+        border: white;
+        font-size:20pt;
+    min-width:65px;
+    min-height:60px;
+    font-weight: bold;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-style: italic;
+      }
+      input[type="text"] {
+height: 50px;
+width: 200px;
+}
+input[type="number"] {
+height: 50px;
+width: 200px;
+}
+.age:hover{
+    background-color: black;
+}
+span{
+	background: #1aaecc;
+	height: 100%;
+	width: 0;
+	border-radius: 25px;
+	position: absolute;
+	left: 0;
+	bottom:0;
+	z-index: -1;
+	transition: 0.5s;
+}
+input[type="submit"] {
+height: 50px;
+width: 150px;
+cursor: pointer;
+
+}
+input[type="submit"]:hover span{
+    width: 100%;
+    border: none;
+}
+select[name="find"]{
+    height: 50px;
+width: 200px;
+font-size: 20pt;
+font-family:Georgia, 'Times New Roman', Times, serif;
+        font-style: italic;
+}
+    </style>
+</head>
+<body ><br><br><br>
+    <center><h1>Hello!!! Please enter your problems</h1></center>
+     <center><form method="post">
+        {% csrf_token %}
+        <table>
+        <tr><td><label for="name">Enter Name:</label></td>
+        <td><input type="text" name="name" required><br></td></tr>
+        <tr><td><label for="age">Enter Age:</label></td>
+            <td><input type="number" name="age" required><br></td></tr>
+            <tr><td><label for="email">Enter E-Mail:</label></td>
+               <td> <input type="text" name="email" required><br></td></tr>
+                <tr><td><label for="problem">specify your problem:</label></td>
+                    <td><select name="find" id="find1" required>
+                        <option value="Knee Pain">Knee Pain</option>
+                        <option value="Wrist Pain">Wrist Pain</option>
+                        <option value="Hand and Fingers Pain">Hand and Fingers Pain</option>
+                        <option value="Headache">Headache</option>
+                        <option value="Joint Pain">Joint Pain</option>
+                        <option value="Neck Pain">Neck Pain</option>
+                        <option value="Leg Pain">Leg Pain</option>
+                        <option value="stress">stress</option>
+                    </select></td></tr>
+                    <span></span><tr><td style="padding-left:40%;"><input type="submit" name="submit" id="submit1" value="submit"></td></tr>
+                </table>
+    </form></center>
+</body>
+</html>

@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>solution</title>
+<style>
+    h1{
+        text-align: center;
+        font-size: 40pt;
+        text-transform: capitalize;
+        font-weight: bold;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        color:#1aaecc ;
+        background-size: cover;
+	background-position: center;
+    }
+    .data{
+        text-align: center;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        font-style: italic;
+    }
+    .data{
+        font-size: 20pt;
+    }
+</style>
+</head>
+<body>
+    
+    <h1>Suggested asanas for {{ find }} </h1><br><br>
+    <table align="center">
+        {% csrf_token %}
+        {% for i in det %}
+        
+        <tr><td>
+        <a href="{{i.asana1}}"><div class="image">
+                <img src="/static/media/{{ i.img1 }}" alt="image" height="525px" width="525px">
+        
+        </div></a><br>
+        <div class="data">
+            <h2 style="color: #1aaecc">{{ i.asana1 }}</h2>
+        </div>
+        </td>
+        <td>
+            <a href="{{i.asana2}}"><div class="image">
+                <img src="/static/media/{{ i.img2 }}" alt="image" height="525px" width="525px">
+        
+        </div></a><br><div class="data">
+            <h2 style="color: #1aaecc">{{ i.asana2 }}</h2>
+        </div>
+        </td>
+        <td>
+        <div class="image">
+                <img src="/static/media/{{ i.img3 }}" alt="image" height="525px" width="525px">
+        
+        </div><br><div class="data">
+        <h2 style="color: #1aaecc">{{i.asana3}}</h2>
+    </div>
+    </td></tr>
+
+        
+        
+        {% endfor %}
+    </table>
+
+
+</body>
+</html>
